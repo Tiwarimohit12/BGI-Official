@@ -1,0 +1,545 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  perspective: 800px;
+}
+#cursor{
+  height: 25px;
+  width: 25px;
+  background-color: #95C11E;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 99;
+}
+#cursor-blur{
+  height: 500px;
+  width: 500px;
+  background-color: #96c11e34;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9;
+  filter: blur(40px);
+}
+#nav{
+    height: 80px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 150px;
+    position: fixed;
+    top: 0;
+    gap:40px;
+    z-index: 99999;
+    /* background-color: #82d8f448; */
+}
+#nav h4{
+  text-transform: uppercase;
+  font-weight: 500;
+  /* color: black; */
+}
+video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+#main{
+  /* width: 100%; */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.231);
+}
+#page1{
+  height: 100vh;
+  width: 100%;
+  /* background-color: #be1a1a; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+#page1 h1{
+  font-size: 100px;
+  font-weight: 900;
+  position: relative;
+}
+#page1 h1::before{
+  content: "WELCOME TO BGI";
+  position: absolute;
+  color: black;
+  top: -6px;
+  left: -6px;
+  -webkit-text-stroke: 1px #95C11E;
+  z-index: -1;
+}
+#page1 h2{
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to left bottom,#d37014,#5dea5a);
+
+}
+#page p{
+  font-size: 20px;
+  font-weight: 500;
+  width: 40%;
+}
+#page2{
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+#scroller{
+  /* background-color: #d33737; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+  display: none;
+}
+#scroller-in{
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration:30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#scroller h4{
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 900;
+  margin-right: 10px;
+  transition: all linear 0.5;
+  -webkit-text-stroke: 2px #95C11E;
+  color:transparent;
+}
+#scroller h4:hover{
+  color: #95C11E;
+}
+@keyframes scroll {
+  from{
+    transform: translate(0);
+  }
+  to{
+    transform: translate(-100%);
+  }
+  
+}
+#about-us{
+  height: 40vh;
+  width: 100%;
+  /* background-color: #b34b4b; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 50px;
+}
+#about-us img{
+  height: 220px;
+  width: 220px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+#about-us-in{
+  width: 40%;
+  text-align: center;
+} 
+#about-us-in h3{
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 40px;
+
+}
+#about-us-in:hover h3{
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #d37014;
+
+}
+#about-us-in p{
+  font-size: 10px;
+  line-height: 26px;
+}
+#about-us-in:hover p{
+  font-size: 12px;
+  line-height: 26px;
+  border-radius: 30px;
+  color: #92f7fa;
+}
+#cards-container{
+  /* background-color: #c02525; */
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+}
+.card{
+  height: 80%;
+  width: 24%;
+  /* background-color: #5243d5; */
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  transition: all ease 0.6s;
+}
+#card1{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/10/47-1-scaled-570x385@2x.jpg);  
+}
+#card2
+{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/04/07-570x385.jpg);  
+}
+#card3{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/06/Placement-Day-2023-14-570x385.jpg);  
+}
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: #95C11E;
+  padding: 20px;
+  padding-top: 120px;
+  opacity: 0;
+  border-radius: 20px;
+  transition: all ease 0.6s;
+}
+.card:hover .overlay{
+  opacity: 1;
+}
+.overlay h4{
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.overlay p{
+  color: black;
+  font-size: 15px;
+}
+.card:hover{
+  transform: rotate3d(1,1,0,20deg);
+}
+#green-div{
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #95C11E;
+  border-radius: 20px;
+  background: linear-gradient(to left bottom,#60cfcb,#6b513a);
+
+}
+#green-div h4{
+  width: 55%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #000;
+  
+}
+#green-div img{
+  height: 100%;
+  object-fit: cover;
+  width: 14%;
+  
+}
+#page3{
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+#page3>p{
+  font-size: 35px;
+  font-weight: 700;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+}
+#page3 img{
+  position: absolute;
+  height: 60px;
+}
+#page3 #colon1{
+  left: 12%;
+  top: 32%;
+}
+#page3 #colon2{
+  bottom:30%;
+  right: 20%;
+}
+#page4{
+  height: 30vh;
+  width: 100%;
+  /* background-color: #b33939; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+}
+.elem{
+  height: 70%;
+  width: 26%;
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+.elem h2{
+  height: 100%;
+  width: 100%;
+  background-color: #9db8c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.5s;
+  font-size:30px ;
+  color: #000;
+  font-weight: 800;
+  position: absolute;
+  z-index: 10;
+  /* background: linear-gradient(to left bottom,#1e52c1,#ea5a79); */
+}
+.elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.1;
+}
+.elem:hover h2{
+  color: #fff;
+  background-color: transparent;
+}
+.elem:hover img{
+  scale:1;
+}
+#page4 h1{
+  font-size: 80px;
+  position: absolute;
+  top: -160px;
+  font-weight: 900;
+  color: #e7626236;
+  -webkit-text-stroke: 2px rgb(50, 226, 14)
+}
+#footer{
+  height: 40vh;
+  width: 100%;
+  background-color: #95C11E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to left bottom,#000000,#3e3d3e);
+  border-radius: 30px;
+}
+#footer #about-us-in h3{
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 20px;
+
+}
+#footer #about-us-in p{
+  font-size: 15px;
+  line-height: 20px;
+}
+#facilities{
+  height: 60vh;
+  width: 100%;
+  background-color: #5dea5a;
+  /* display: flex; */
+  align-items: center;
+  justify-content: s;
+  object-fit: cover;
+  position: relative;
+  background: linear-gradient(to left bottom,#60cf80,#be366a);
+}
+#facilities h1{
+  /* left: 50%; */
+  margin-left: 47%;
+  /* position: absolute; */
+}
+#facilities #photo{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  padding:0 170px;
+}
+#facilities #id1{
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 20px;
+}
+#facilities #id2{
+  height: 350px;
+  width: 600px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 20px;
+}
+#facilities #id3{
+  height: 350px;
+  width: 350px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 20px;
+}
+#cards-container1{
+  /* background: linear-gradient(to left bottom,#ea5a79,#1e52c1); */
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  border-radius: 30px;
+  z-index: 10;
+}
+.card1{
+  height: 80%;
+  width: 24%;
+  /* background-color: #5243d5; */
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  transition: all ease 0.6s;
+}
+#card4{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/05/Sports.jpg);  
+}
+#card5{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/05/Library.jpg);  
+}
+#card6{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/05/Classroom.jpg);  
+}
+.card1 .overlay{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to left bottom,#eaa95a,#c11e5f);
+  padding: 20px;
+  padding-top: 120px;
+  opacity: 0;
+  border-radius: 20px;
+  transition: all ease 0.6s;
+}
+.card1:hover .overlay{
+  opacity: 1;
+}
+.card1 .overlay h4{
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.card1 .overlay p{
+  color: black;
+  font-size: 15px;
+}
+.card1:hover{
+  transform: rotate3d(1,1,0,20deg);
+}
+#cards-container2{
+  /* background: linear-gradient(to left bottom,#1e52c1,#ea5a79); */
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+}
+.card2{
+  height: 80%;
+  width: 24%;
+  /* background-color: #5243d5; */
+  border-radius: 20px;
+  background-position: center;
+  background-size: cover;
+  transition: all ease 0.6s;
+}
+#card7{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/05/Bus-500X300.jpg);  
+}
+#card8{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/05/Canteen.jpg);  
+}
+#card9{
+  background-image: url(https://bgibhopal.com/wp-content/uploads/2023/05/NCC-500X300.jpg);  
+}
+.card2 .overlay{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to left bottom,#eaa95a,#c11e5f);
+  padding: 20px;
+  padding-top: 120px;
+  opacity: 0;
+  border-radius: 20px;
+  transition: all ease 0.6s;
+}
+.card2:hover .overlay{
+  opacity: 1;
+}
+.card2 .overlay h4{
+  color: black;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.card2 .overlay p{
+  color: black;
+  font-size: 15px;
+}
+.card2:hover{
+  transform: rotate3d(1,1,0,20deg);
+}
+#last-page{
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #162f49;
+  border-radius: 30px;
+  gap: 170px;
+}
+#last-page #div1 h3{
+  font-size: 20px;
+}
+#last-page #div2 h2{
+  font-size: 15px;
+}
+#last-page #div3 h3{
+  font-size: 15px;
+}
